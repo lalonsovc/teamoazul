@@ -204,34 +204,57 @@
         </div>
     </div>
     <div class="controls">
-        <button onclick="showSlide(1)">1</button>
-        <button onclick="showSlide(2)">2</button>
-        <button onclick="showSlide(3)">3</button>
-        <button onclick="showSlide(4)">4</button>
-        <button onclick="showSlide(5)">5</button>
-        <button onclick="showSlide(6)">6</button>
-        <button onclick="showSlide(7)">7</button>
-        <button onclick="showSlide(8)">8</button>
-        <button onclick="showSlide(9)">9</button>
-        <button onclick="showSlide(10)">10</button>
+        <button id="btn1"onclick="showSlide(1)">1</button>
+        <button id="btn2"  onclick="showSlide(2)">2</button>
+        <button id="btn3" onclick="showSlide(3)">3</button>
+        <button id="btn4" onclick="showSlide(4)">4</button>
+        <button id="btn5" onclick="showSlide(5)">5</button>
+        <button id="btn6" onclick="showSlide(6)">6</button>
+        <button id="btn7" onclick="showSlide(7)">7</button>
+        <button id="btn8" onclick="showSlide(8)">8</button>
+        <button id="btn9" onclick="showSlide(9)">9</button>
+        <button id="btn10" onclick="showSlide(10)">10</button>
     </div>
 </div>
 
 <script>
-    function showSlide(slideNumber) {
-        var slides = document.querySelectorAll('.slide');
-        var backgrounds = document.querySelectorAll('.background');
-        
-        slides.forEach(function(slide) {
-            slide.classList.remove('active');
-        });
-        backgrounds.forEach(function(background) {
-            background.classList.remove('active');
-        });
+    var sequence = []; // Almacena la secuencia de botones presionados
 
-        document.getElementById('slide' + slideNumber).classList.add('active');
-        document.querySelector('.background' + slideNumber).classList.add('active');
-    }
+function showSlide(slideNumber) {
+    var slides = document.querySelectorAll('.slide');
+    var backgrounds = document.querySelectorAll('.background');
+    
+    slides.forEach(function(slide) {
+        slide.classList.remove('active');
+    });
+    backgrounds.forEach(function(background) {
+        background.classList.remove('active');
+    });
+
+    document.getElementById('slide' + slideNumber).classList.add('active');
+    document.querySelector('.background' + slideNumber).classList.add('active');
+}
+
+function navigateToYouTube() {
+    // Abre el enlace de YouTube cuando se llama esta función
+    window.location.href = "https://www.youtube.com/watch?v=2Vv-BfVoq4g"; // Cambia esto al enlace que desees
+}
+
+document.querySelectorAll('.controls button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        var buttonNumber = parseInt(this.textContent);
+        
+        // Agregar el botón presionado a la secuencia
+        sequence.push(buttonNumber);
+
+        // Verificar si la secuencia es 2, 4
+        if (sequence.length >= 2 && sequence[sequence.length - 2] === 2 && sequence[sequence.length - 1] === 4) {
+            navigateToYouTube(); // Redirigir a YouTube si la secuencia es 2, 4
+        } else {
+            showSlide(buttonNumber); // Mostrar la diapositiva correspondiente
+        }
+    });
+});
 </script>
 
 </body>

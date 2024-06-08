@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Azul</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f55b68;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .slider-container {
+            height: 600px;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(5.5px);
+            z-index: -1;
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        .background.active {
+            opacity: 1;
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide-content {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(0inch);
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #f55b68;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        .controls button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background: #ff869a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+            flex: 1 1 calc(25% - 10px);
+            max-width: 100px;
+            text-align: center;
+        }
+        .controls button:hover {
+            background: #ff4a70;
+        }
+        @media (max-width: 600px) {
+            .controls button {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        .background1 {
+            background-image: url('images/1.jpg');
+        }
+        .background2 {
+            background-image: url('images/1698196898984.webp');
+            height: 130%;
+            width: 130%;
+            margin-top: -60px;
+            margin-left: -60px;
+        }
+        .background3 {
+            background-image: url('images/IMG_20230412_175139_006.webp');
+            height: -80%;
+            width: -80%;
+        }
+        .background4 {
+            background-image: url('images/4.jpg');
+        }
+        .background5 {
+            background-image: url('images/5.jpg');
+        }
+        .background6 {
+            background-image: url('images/6.webp');
+        }
+        .background7 {
+            background-image: url('images/7.jpg');
+        }
+        .background8 {
+            background-image: url('images/8.webp');
+        }
+        .background9 {
+            background-image: url('images/10.jpg');
+        }
+        .background10 {
+            background-image: url('images/9.jpg');
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="background background1 active"></div>
+    <div class="background background2"></div>
+    <div class="background background3"></div>
+    <div class="background background4"></div>
+    <div class="background background5"></div>
+    <div class="background background6"></div>
+    <div class="background background7"></div>
+    <div class="background background8"></div>
+    <div class="background background9"></div>
+    <div class="background background10"></div>
+    <div class="background background11"></div>
+
+    <div class="slide active" id="slide1">
+        <div class="slide-content">
+            <h2>Capítulo 1: Un Comienzo Especial</h2>
+            <h4>Mi Azulita</h4>
+            <p>Recuerdo claramente el día en que nuestros caminos se cruzaron por primera vez. Fue un momento mágico, un instante en el que el universo pareció detenerse para presentarnos el uno al otro. Desde entonces, supe que algo especial estaba destinado a suceder entre nosotros.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide2">
+        <div class="slide-content">
+            <h2>Capítulo 2: Momentos Inolvidables</h2>
+            <p>Hemos compartido tantos momentos maravillosos juntos que se han convertido en tesoros en mi corazón. Desde nuestras aventuras espontáneas hasta nuestras noches tranquilas en casa, cada momento a tu lado es un regalo que atesoro profundamente.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide3">
+        <div class="slide-content">
+            <h2>Capítulo 3: Descubriendo lo Profundo</h2>
+            <p>A medida que pasaba el tiempo, descubrimos capas más profundas de nosotros mismos y de nuestra relación. Me maravilla cómo hemos llegado a conocernos tan bien, cómo nuestros corazones parecen latir al unísono, incluso en los momentos más simples de la vida.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide4">
+        <div class="slide-content">
+            <h2>Capítulo 4: Superando Obstáculos</h2>
+            <p>No hemos estado exentos de desafíos en nuestro camino, pero cada obstáculo que enfrentamos solo ha fortalecido nuestra conexión. Juntos, hemos demostrado una y otra vez que somos capaces de superar cualquier cosa, siempre y cuando estemos juntos.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide5">
+        <div class="slide-content">
+            <h2>Capítulo 5: La Belleza de lo Cotidiano</h2>
+            <p>Es en los pequeños momentos cotidianos donde encuentro la verdadera magia de nuestra relación. Desde las conversaciones al azar hasta las risas compartidas sobre cosas triviales, cada día a tu lado es una aventura que espero con ansias.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide6">
+        <div class="slide-content">
+            <h2>Capítulo 6: Aprendizajes y Crecimiento</h2>
+            <p>Nuestra relación me ha enseñado más de lo que jamás hubiera imaginado. A través de los altibajos, hemos crecido como individuos y como pareja, aprendiendo lecciones que nos han moldeado y nos han hecho más fuertes juntos.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide7">
+        <div class="slide-content">
+            <h2>Capítulo 7: El Apoyo Incondicional</h2>
+            <p>Tu apoyo inquebrantable ha sido mi mayor fortaleza en los momentos difíciles. En tus brazos, encuentro consuelo y fuerza para enfrentar cualquier desafío que la vida nos presente. Gracias por estar siempre a mi lado, sin importar qué.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide8">
+        <div class="slide-content">
+            <h2>Capítulo 8: Celebrando el Amor</h2>
+            <p>Hoy, en tu cumpleaños 17, quiero celebrar todo lo maravilloso que eres y todo lo que significas para mí. Este día es una oportunidad para honrar tu vida, tu luz y tu amor, y para recordarte cuánto te admiro y te valoro.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide9">
+        <div class="slide-content">
+            <h2>Capítulo 9: Mirando hacia el Futuro</h2>
+            <p>Mientras miro hacia el futuro, solo puedo imaginar infinitas posibilidades para nosotros. Sueño con todos los momentos felices que nos esperan, con todas las aventuras que aún tenemos por vivir y con el amor que seguirá creciendo entre nosotros.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide10">
+        <div class="slide-content">
+            <h2>Capítulo 10: Un Compromiso Eterno</h2>
+            <p>En este día especial, quiero renovar mi compromiso contigo y prometerte mi amor eterno. Eres mi compañera de vida, mi mejor amiga y mi mayor amor, y estoy infinitamente agradecido por cada momento que compartimos juntos. Que este cumpleaños sea el comienzo de otro año lleno de felicidad, amor y sueños cumplidos.</p>
+            <h4>Feliz Cumpleaños Azul</h4>
+            <p>Con amor, <strong>Wiwi</strong>&hearts;</p>
+        </div>
+    </div>
+    <div class="controls">
+        <button onclick="showSlide(1)">1</button>
+        <button onclick="showSlide(2)">2</button>
+        <button onclick="showSlide(3)">3</button>
+        <button onclick="showSlide(4)">4</button>
+        <button onclick="showSlide(5)">5</button>
+        <button onclick="showSlide(6)">6</button>
+        <button onclick="showSlide(7)">7</button>
+        <button onclick="showSlide(8)">8</button>
+        <button onclick="showSlide(9)">9</button>
+        <button onclick="showSlide(10)">10</button>
+    </div>
+</div>
+
+<script>
+    function showSlide(slideNumber) {
+        var slides = document.querySelectorAll('.slide');
+        var backgrounds = document.querySelectorAll('.background');
+        
+        slides.forEach(function(slide) {
+            slide.classList.remove('active');
+        });
+        backgrounds.forEach(function(background) {
+            background.classList.remove('active');
+        });
+
+        document.getElementById('slide' + slideNumber).classList.add('active');
+        document.querySelector('.background' + slideNumber).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

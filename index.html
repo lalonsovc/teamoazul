@@ -255,6 +255,29 @@ document.querySelectorAll('.controls button').forEach(function(button) {
         }
     });
 });
+
+
+
+function navigateToAudio() {
+    // Abre el enlace de YouTube cuando se llama esta función
+    window.location.href = "audio.html"; // Cambia esto al enlace que desees
+}
+
+document.querySelectorAll('.controls button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        var buttonNumber = parseInt(this.textContent);
+        
+        // Agregar el botón presionado a la secuencia
+        sequence.push(buttonNumber);
+
+        // Verificar si la secuencia es 2, 4
+        if (sequence.length >= 3 && sequence[sequence.length - 3] === 3 && sequence[sequence.length - 1] === 9) {
+            navigateToAudio(); // Redirigir a YouTube si la secuencia es 2, 4
+        } else {
+            showSlide(buttonNumber); // Mostrar la diapositiva correspondiente
+        }
+    });
+});
 </script>
 
 </body>

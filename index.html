@@ -271,7 +271,7 @@ document.querySelectorAll('.controls button').forEach(function(button) {
         sequence.push(buttonNumber);
 
         // Verificar si la secuencia es 2, 4
-        if (sequence.length >= 3 && sequence[sequence.length - 3] === 3 && sequence[sequence.length - 1] === 9) {
+        if (sequence.length >= 2 && sequence[sequence.length - 2] === 2 && sequence[sequence.length - 1] === 1) {
             navigateToAudio(); // Redirigir a YouTube si la secuencia es 2, 4
         } else {
             showSlide(buttonNumber); // Mostrar la diapositiva correspondiente

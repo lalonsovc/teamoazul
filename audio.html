@@ -55,6 +55,25 @@
                 transform: scale(1);
             }
         }
+
+        .back-button {
+            background-color: #d189cb;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+.back-button:hover {
+    background-color: #45a049;
+}
     </style>
 </head>
 <body>
@@ -66,6 +85,7 @@
         <source src="images/a1.m4a"audio/m4a">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
+    <button class="back-button" onclick="location.href='index.html'">Volver</button>
 </div>
 
 </body>

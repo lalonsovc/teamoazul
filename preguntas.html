@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #f0e6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #6a1b9a;
+            margin-bottom: 20px;
+        }
+        .question {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .question input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background: #8e24aa;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #6a1b9a;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #8e24aa;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Cuánto sabes sobre nosotros?</h1>
+    <div id="quiz">
+        <div class="question">
+            <p>¿Dónde fuimos la primera vez que salimos?</p>
+            <input type="text" id="q1">
+        </div>
+        <div class="question">
+            <p>¿Cuál es tu canción favorita?</p>
+            <input type="text" id="q2">
+        </div>
+
+        <div class="question">
+            <p>¿Cuál es mi comida favorita?</p>
+            <input type="text" id="q3">
+        </div>
+        <div class="question">
+            <p>¿Que saga vimos de principio a fin?</p>
+            <input type="text" id="q4">
+        </div>
+        <!-- Agrega más preguntas aquí -->
+        <button onclick="checkAnswers()">Enviar</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        function checkAnswers() {
+            var score = 0;
+            if (document.getElementById('q1').value.toLowerCase() === 'Mega Plaza' || 
+                document.getElementById('q1').value.toLowerCase() === 'Mega plaza' || 
+                document.getElementById('q1').value.toLowerCase() === 'mega plaza' || 
+                document.getElementById('q1').value.toLowerCase() === ',Mega' ||
+                document.getElementById('q1').value.toLowerCase() === 'mega') score++;
+
+            if (document.getElementById('q2').value.toLowerCase() === 'Perfect' || 
+                document.getElementById('q2').value.toLowerCase() === 'perfect') score++;
+
+            if (document.getElementById('q3').value.toLowerCase() === 'Lomo Saltado' || 
+                document.getElementById('q3').value.toLowerCase() === 'Lomo saltado' || 
+                document.getElementById('q3').value.toLowerCase() === 'lomo saltado') score++;
+
+            if (document.getElementById('q4').value.toLowerCase() === 'Harry Potter' || 
+                document.getElementById('q4').value.toLowerCase() === 'Harry potter' || 
+                document.getElementById('q4').value.toLowerCase() === 'harry potter') score++;
+
+            document.getElementById('result').innerText = '¡Puntaje: ' + score + '/4!';
+            if (score === 4) {
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000); // Cambia 3000 a la cantidad de milisegundos que quieras de retraso (en este caso, 3 segundos)
+            }
+        }
+
+    </script>
+</body>
+</html>
